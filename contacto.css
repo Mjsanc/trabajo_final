@@ -1,0 +1,301 @@
+@import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+/* REGLAS GLOBALES */
+*,:after,:before {
+  box-sizing: inherit/*hereda el estilo que se le aplique*/
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box
+}
+
+body {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 2.2rem;
+  line-height: 1.8;
+  z-index:1;
+}
+
+a {
+  text-decoration: none
+}
+
+.contenedor {
+width: 95%;
+max-width: 120rem;
+margin: 0 auto
+}
+
+img,picture {
+  width: 100%;
+  display: block
+}
+
+h1,h2,h3 {
+font-family: 'Barlow Condensed', sans-serif;
+margin: 2.5rem 0;
+font-weight: 300;
+padding: 40px;
+}
+
+body{
+font-family:'La Belle Aurore', cursive ;
+background-color: #f8cbbe;
+}
+
+img{
+width: 100%;
+}
+
+
+/*Comienza elnavegador*/
+header#navegador{ 
+z-index: 10;
+top: 5px;
+left: 10px;
+}
+
+.hamburger-icon {
+position: absolute;
+z-index: 1;
+top: 5px;
+left: 8px;
+padding-bottom: 2px;
+}
+
+input.hamburger-checkbox {
+position: absolute;
+z-index: 10;
+top: 5px;
+left: 5px;
+width: 10px;
+opacity: 0;
+height: 6px;
+}
+
+
+.hamburger-icon span {
+height: 3px;
+width: 26px;
+background-color: black;
+display: block;
+margin: 5px 0px 5px 0px;
+transition: 0.5s ease-in-out;
+transform: none;
+}
+
+/* PARA ABRIR LA AMBURGUESA */
+
+#openmenu:checked ~ .menu-pane {
+left: -5px;
+transform: translateX(-5px);
+padding-right: 20px;
+}
+
+#openmenu:checked ~ .body-text {
+display: none;
+}
+
+/*Las lineas se convierten en aspa y las otras dos se eliminan*/
+
+#openmenu:checked ~ .hamburger-icon span:nth-of-type(2) {
+transform: translate(0%, 175%) rotate(-45deg);
+background-color: black;
+}
+
+#openmenu:checked ~ .hamburger-icon span:nth-of-type(3) {
+transform: rotate(45deg);
+background-color: black;
+}
+
+#openmenu:checked ~ .hamburger-icon span:nth-of-type(1) {
+opacity: 0;
+}
+
+#openmenu:checked ~ .hamburger-icon span:nth-of-type(4) {
+opacity: 0;
+}
+
+/*nav atributos*/
+
+div.menu-pane {
+background-color:#dacfd8;
+transform: translateX(-105vw);
+transform-origin: (0, 0);
+transition: 0.6s ease-in-out;
+width: auto;
+position: absolute;
+}
+
+.menu-pane nav {
+  display: flex;
+flex-direction: column;
+}
+
+.menu-pane ul {
+display: inline-block;
+}
+
+
+/*Lo que tarda la hamburguesa en desplegarse*/
+.menu-links li, a {
+transition: 0.5s ease-in-out;
+}
+
+.menu-pane li {
+margin-left: 10px;
+font-size: 2em;
+}
+
+/*Para que todo el listado este recto*/
+.menu-pane li:first-child {
+font-size: 1.3em;
+margin-left: -10px;
+}
+
+.menu-links li a {
+color: black;
+text-decoration: none;
+font-weight: bolder;
+}
+
+.menu-links:hover a {
+color: black;  
+;
+}
+
+ul,li {  
+list-style-type: none;
+}
+.menu-links li a:hover{
+background-color:#a9cddc;
+padding: 5px;
+border-radius: 10px;
+}
+
+
+/*termina nav
+
+
+/*boton enviar*/
+input.enviar{
+border-width: 4px;
+border-style: ridge;
+border-color: #717776;
+border-radius: 11px;
+}
+
+input.enviar:hover{
+  padding: 8px;
+  background-color: antiquewhite;
+}
+
+/*empieza formulario*/
+.contacto{
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: justify;
+  padding-top: 20px;
+}
+.form{
+  width: 70%;
+  box-sizing: border-box;
+}
+
+div.imagen{
+  width: 60%;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+/*empieza el footer*/
+footer{
+  font-family: 'Barlow Condensed', sans-serif;
+  background-color: #cecacd;
+  
+}
+footer p{
+  font-size: 2rem;
+}
+
+.escaparate{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-top: 20px;
+ 
+}
+.escaparate div{
+  
+  width: 100%;
+  text-align: center;
+}
+
+.tlf{
+  padding-left:15px;
+  padding-right: 12px;
+  font-size: 35px;
+}
+
+.frame{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  
+}
+.icon-phone a:hover{
+  background-color: #0a0a0a;
+  padding: 5px;
+  border-radius: 10px;
+  color:white
+}
+
+@media (min-width: 768px) {
+  .enlace{
+    display: flex;
+    flex-direction: column;
+     }
+
+  .escaparate{
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .tarjeta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+ .nav ul li a{
+  font-size: 4rem;
+}
+
+.hamburger-icon span {
+  height: 5px;
+  width: 40px;
+}
+
+.menu-pane nav {
+  display: flex;
+  flex-direction: row;
+  }
+
+}
+@media(max-witdth:440px){
+
+  .contacto{
+    width: 440px;
+  }
+}
